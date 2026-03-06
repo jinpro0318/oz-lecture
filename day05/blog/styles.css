@@ -1,0 +1,95 @@
+/* === 박스 모델 및 기본 스타일 === */
+* {
+  box-sizing: border-box; /* 요구사항: border-box 적용 */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  max-width: 100%; /* 요구사항: 최대 너비 100% */
+  padding: 1rem;   /* 요구사항: 패딩 1rem */
+  line-height: 1.6;
+}
+
+/* === 타이포그래피 (상대 단위 활용) === */
+h1 { font-size: 2rem; }   /* 요구사항: 2rem */
+h2 { font-size: 1.5rem; } /* 요구사항: 1.5rem */
+h3 { font-size: 1.2rem; } /* 요구사항: 1.2rem */
+
+/* === 모바일 기본 스타일 (Mobile First) === */
+header {
+  padding: 1rem; 
+  border-bottom: 0.1rem solid #333; /* 요구사항: 0.1rem 실선 */
+  margin-bottom: 1rem;
+}
+
+nav ul {
+  display: flex;          /* 요구사항: Flexbox */
+  flex-direction: column; /* 요구사항: 세로 배치 */
+  gap: 0.5rem;            /* 요구사항: 간격 0.5rem */
+  padding: 1rem;          /* 요구사항: 패딩 1rem */
+  list-style: none;
+}
+
+#posts {
+  display: flex;
+  flex-direction: column; /* 요구사항: 세로 배치 */
+  gap: 1rem;              /* 요구사항: 간격 1rem */
+  margin: 2vw 1vw;        /* 요구사항: 상하 2vw, 좌우 1vw */
+}
+
+.post {
+  padding: 1rem;
+  border: 0.1rem solid #333; 
+  margin-bottom: 1rem;
+}
+
+aside {
+  padding: 1rem;
+  margin-top: 1rem;
+  font-size: 0.9rem;      /* 요구사항: 0.9rem */
+  line-height: 1.5em;     /* 요구사항: 1.5em */
+}
+
+footer {
+  padding: 1rem;
+  border-top: 0.1rem solid #333;
+  margin-top: 1rem;
+  font-size: 0.8rem;      /* 요구사항: 0.8rem */
+  text-align: center;     /* 요구사항: 중앙 정렬 */
+}
+
+/* === 미디어 쿼리: 태블릿 (768px 이상) === */
+@media (min-width: 768px) {
+  body {
+    max-width: 90vw;      /* 요구사항: 최대 너비 90vw */
+    margin: 0 auto;       /* 요구사항: 중앙 정렬 */
+  }
+  nav ul {
+    flex-direction: row;  /* 요구사항: 가로 배치 */
+    justify-content: space-around; /* 요구사항: 간격 고르게 분배 */
+  }
+  #posts {
+    display: grid;        /* 추가: 그리드 전환 */
+    grid-template-columns: 1fr 1fr; /* 요구사항: 2열 그리드 */
+    gap: 1.5rem;          /* 요구사항: 열 간 간격 1.5rem */
+  }
+  aside {
+    margin-top: 1.5rem;   /* 요구사항: 여백 1.5rem으로 증가 */
+  }
+}
+
+/* === 미디어 쿼리: 데스크톱 (1024px 이상) === */
+@media (min-width: 1024px) {
+  body {
+    max-width: 80vw;      /* 요구사항: 최대 너비 80vw */
+  }
+  #posts {
+    grid-template-columns: 1fr 1fr 1fr; /* 요구사항: 3열 그리드 */
+  }
+  aside {
+    width: 25vw;          /* 요구사항: 너비 25vw */
+    margin-left: 2vw;     /* 요구사항: 왼쪽 여백 2vw */
+  }
+}
