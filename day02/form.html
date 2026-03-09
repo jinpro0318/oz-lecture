@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Form 입력 관련 태그</title>
+  </head>
+  <body>
+    <form action="/submit" method="GET">
+      <input type="text" name="username" placeholder="사용자 이름" />
+      <input type="password" name="password" placeholder="비밀번호" />
+      <br />
+      <div>
+        <h3>취미를 선택해주세요</h3>
+        <input type="checkbox" name="hobby" value="reading" /> 독서
+        <input type="checkbox" name="hobby" value="gaming" /> 게임
+      </div>
+      <div>
+        <h3>성별을 선택해주세요</h3>
+        <input type="radio" name="gender" value="male" /> 남성
+        <input type="radio" name="gender" value="female" /> 여성
+      </div>
+      <div>
+        <h3>도시을 선택해주세요</h3>
+        <select name="city" multiple>
+          <option value="seoul">서울</option>
+          <option value="busan">부산</option>
+          <option value="jeju">제주</option>
+        </select>
+      </div>
+      <div>
+        <h3>기타정보</h3>
+        <div>
+          <input type="email" name="email" placeholder="example@domain.com" />
+        </div>
+        <input type="date" name="birthdate" placeholder="생일을 선택하세요" />
+        <br />
+        <input type="number" name="age" min="1" max="100" />
+        <br />
+        <input type="range" name="volume" min="0" max="100" />
+        <br />
+        <input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
+        <br />
+        <input
+          type="url"
+          name="url"
+          placeholder="https://example.com"
+          pattern="https://.*"
+          size="30"
+          required
+        />
+        <div id="monster-color-container">
+          <p>Choose your monster's colors:</p>
+          <div>
+            <input type="color" id="head" name="head" value="#e66465" />
+            <label for="head">Head</label>
+          </div>
+          <div>
+            <input type="color" id="body" name="body" value="#f6b73c" />
+            <label for="body">Body</label>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <button type="submit">제출</button>
+      <button type="reset">초기화</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Registration - OZ Coding School</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="promo-banner">
+    <div class="promo-content">
+      <div class="promo-side promo-left">
+        <img src="image/오즈코딩스쿨logo.png" alt="오즈코딩스쿨 로고" class="promo-logo">
+      </div>
+
+      <div class="promo-center">
+        <p class="promo-call-to-action">
+          오즈코딩스쿨 1인창업가 부트캠프송! 에너지 충전하고 시작하세요! 🔥
+        </p>
+        <audio controls class="promo-audio">
+          <source src="media/오즈코딩스쿨 1인창업가 부트캠프송.mp3" type="audio/mpeg">
+          브라우저가 오디오를 지원하지 않습니다.
+        </audio>
+      </div>
+      <div class="promo-side promo-right"></div>
+    </div>
+  </header>
+  
+  <div id="container">
+    <h1>User Registration</h1>
+    
+    <form id="registration-form" action="#" method="POST">
+      
+      <p class="form-group">
+        <label for="name" class="required-label">Name:</label>
+        <input type="text" id="name" name="name" placeholder="이름을 입력하세요">
+      </p>
+      
+      <p class="form-group">
+        <label for="email" class="required-label">Email:</label>
+        <input type="email" id="email" name="email" placeholder="example@oz.com">
+      </p>
+      
+      <p class="form-group">
+        <label for="password" class="required-label">Password:</label>
+        <input type="password" id="password" name="password" placeholder="비밀번호 입력">
+      </p>
+      
+      <p class="form-group">
+        <label for="birthdate">Birthdate:</label>
+        <input type="date" id="birthdate" name="birthdate">
+      </p>
+      
+      <p class="form-group">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="18" max="100">
+      </p>
+      
+      <p class="form-group">
+        <label for="satisfaction">Satisfaction:</label>
+        <input type="range" id="satisfaction" name="satisfaction" min="1" max="10">
+      </p>
+      
+      <p class="form-group">
+        <label>Sex:</label><br>
+        <input type="radio" id="male" name="sex" value="male">
+        <label for="male" class="inline-label">Male</label>
+        <input type="radio" id="female" name="sex" value="female">
+        <label for="female" class="inline-label">Female</label>
+      </p>
+      
+      <p class="form-group">
+        <label>Interests:</label><br>
+        <input type="checkbox" id="coding" name="interests" value="coding">
+        <label for="coding" class="inline-label">Coding</label>
+        <input type="checkbox" id="gaming" name="interests" value="gaming">
+        <label for="gaming" class="inline-label">Gaming</label>
+      </p>
+      
+      <p class="form-group">
+        <label for="country">Country:</label>
+        <select id="country" name="country">
+          <option value="kr">South Korea</option>
+          <option value="us">USA</option>
+          <option value="jp">Japan</option>
+        </select>
+      </p>
+      
+      <p class="form-group buttons">
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+      </p>
+    </form>
+  </div>
+</body>
+</html>
