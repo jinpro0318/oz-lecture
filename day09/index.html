@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Day09</title>
+    </head>
+    <body>
+        <script>
+            // var, let, const 실습
+            var name = "oz";
+            var name = "oz2";
+            console.log(name);
+
+            // 변수 let
+            let age = 25;
+            // let age = 30;
+            age = 30;
+            console.log(age);
+
+            // 상수
+            const pi = 3.14;
+            // pi = 3.1; // 재할당 안됨
+            console.log(pi);
+
+            // 변수 선언 실습
+            var greeting = "안녕하세요";   // 오래된 방식
+            let username = "홍길동";      // 변경 가능한 변수
+            const maxAttempts = 3;      // 고정된 상수
+
+            console.log(greeting);
+            username = "김영희";          // 재할당
+            console.log(username);      // "김영희"
+            console.log(maxAttempts)    // 3
+            
+            // string 문자열
+            let string1 = "작은따옴표('')가 포함됩니다";
+            let string2 = '큰따옴표("")가 포함됩니다';
+            console.log(string1);
+            console.log(string2);
+
+            // string 문자열 연결
+            let stringA = "문자열" + " 연결";
+            let stringB = string1 + " " + string2;
+            console.log("stringA", stringA);
+            console.log("stringB", stringB);
+
+            // ES6 문자열 (백틱)
+            let myName = "taem";
+            let oldString = "나의 이름은 " + myName + "입니다.";
+            let es6String = `나의 이름은 ${myName}입니다.`;
+            console.log(oldString);
+            console.log(es6String);
+
+            // 숫자형
+            // 숫자 - 정수
+            let num1 = 1;
+            let num2 = 2;
+            console.log("num1 + num2:", num1 + num2);
+
+            // 숫자 - 실수
+            let float1 = 0.1;
+            let float2 = 1.1;   // Math
+            console.log("float1 + float2:", float1 + float2);
+
+            // 논리형
+            let boolean1 = true;
+            let boolean2 = false;
+            let boolean3 = 10 < 20;
+            let boolean4 = 10 > 20;
+            console.log("boolean1", boolean1);
+            console.log("boolean2", boolean2);
+            console.log("boolean3", boolean3);
+            console.log("boolean4", boolean4);
+
+            // 객체
+            // 배열
+            let studentScore = [80, 70, 90, 60, 10, 20];
+            let emptyScore = []     // 빈배열
+            console.log(studentScore);
+            console.log("studentScore[0]", studentScore[0]);    // index 0
+            console.log("studentScore[1]", studentScore[1]);    // index 1
+            console.log("studentScore[2]", studentScore[2]);    // index 2
+            console.log("studentScore[3]", studentScore[3]);    // index 3
+            console.log("studentScore.length", studentScore.length);
+
+            // 객체 리터럴 Object
+            let studentScoreObj = {
+                korean: 80,
+                english: 70,
+                math: 90,
+                science: 60
+            }
+            console.log(studentScoreObj);
+            console.log("studentScoreObj.english", studentScoreObj.english);
+            console.log("studentScoreObj.science", studentScoreObj.science);
+
+            console.log("typeof name", typeof name);
+            console.log("typeof age", typeof age);
+            console.log("typeof studentScore", typeof studentScore);
+            console.log("typeof studentScoreObj", typeof studentScoreObj);
+
+        </script>
+    </body>
+</html>
