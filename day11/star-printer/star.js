@@ -12,6 +12,7 @@ const getPromptInput = () => {
             console.log('오류');
             continue;
         }
+        isNotValid = false;
     }
     return input;
 }
