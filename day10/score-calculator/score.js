@@ -11,6 +11,7 @@ inputScore = Number(input);
 // 입력 점수에 보너스 5점 추가 (inputScore = inputScore + 5와 동일)
 inputScore += 5; 
 
+
 // if, else if, else 문 + 논리 연산자(&&) 사용
 if (inputScore >= 100) {
     grade = "S";
