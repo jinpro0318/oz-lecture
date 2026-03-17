@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day13 Control Node</title>
+    <style>
+      .hl {
+        background-color: yellow;
+      }
+      .header {
+        font-size: 24px;
+        font-weight: bold;
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p id="text" class="hl">Control Node</p>
+      <p class="hl">하이라이트</p>
+    </div>
+    <div>
+      <p class="item">Item 1</p>
+      <p class="item">Item 2</p>
+      <p class="item">Item 3</p>
+      <p class="item">Item 4</p>
+      <p class="item">Item 5</p>
+      <p class="item">Item 6</p>
+      <p class="item">Item 7</p>
+    </div>
+    <a href="#" class="link">Link</a>
+    <a href="#" class="link">Link</a>
+    <a href="#" class="link">Link</a>
+    <a href="#" class="link">Link</a>
+
+    <script>
+      const textIdEl = document.getElementById("text");
+      console.log(textIdEl);
+
+      const hlClassEl = document.getElementsByClassName("hl");
+      console.log(hlClassEl);
+
+      const itemClassEl = document.querySelectorAll(".item");
+      console.log(itemClassEl);
+
+      const textValue = textIdEl.textContent;
+      console.log(textValue);
+      //   textIdEl.textContent = "Updated Control Node";
+      //   textIdEl.style.color = "blue";
+      //   textIdEl.style.fontSize = "24px";
+      textIdEl.classList.add("header");
+      textIdEl.classList.remove("hl");
+
+      // 배열을 순환하며 각 요소에 접근
+      for (let i = 0; i < itemClassEl.length; i++) {
+        const item = itemClassEl[i];
+        console.log(item);
+      }
+
+      // 4번째 item 요소에 hl 클래스 추가
+      itemClassEl[3].classList.add("hl");
+
+      // 실 데이터를 불러오는 시간이 필요합니다. (예: API 호출)
+      const linkEls = document.getElementsByClassName("link");
+      const linkValues = ["naver", "google", "daum", "github"];
+      for (let i = 0; i < linkValues.length; i++) {
+        const element = linkValues[i];
+        linkEls[i].setAttribute("href", `https://${element}.com`);
+        linkEls[i].setAttribute("target", "_blank");
+        linkEls[i].setAttribute("data-link", element);
+        linkEls[i].setAttribute("data-index", i);
+      }
+    </script>
+  </body>
+</html>

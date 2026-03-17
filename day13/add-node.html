@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day13 Add Node</title>
+    <style>
+      .year {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script>
+      // 데이터를 불러옵니다.
+      const prepareMovies = () => {
+        const movies = [];
+        let movie1 = {
+          title: "쇼생크 탈출",
+          director: "프랭크 다라본트",
+          year: 1994,
+          genre: "드라마",
+        };
+        let movie2 = {
+          title: "인셉션",
+          // director: "크리스토퍼 놀란",
+          year: 2010,
+          genre: "액션, SF",
+        };
+        let movie3 = {
+          title: "기생충",
+          // director: "봉준호",
+          year: 2019,
+          genre: "드라마, 스릴러",
+        };
+
+        movies.push(movie3);
+        movies.push(movie1);
+        movies.push(movie2);
+        movies.push({
+          title: "어벤져스: 엔드게임",
+          director: "안소니 루소, 조 루소",
+          year: 2019,
+          genre: "액션, 어드벤처, SF",
+        });
+        return movies;
+      };
+
+      const movies = prepareMovies();
+      console.log(movies);
+
+      const container = document.querySelector("#container");
+      console.log(container);
+
+      const movie = movies[0];
+
+      // 요소를 생성하는 함수
+      function makeMovieElement(movie) {
+        const movieEl = document.createElement("div");
+        movieEl.style.border = "1px solid black";
+        const titleEl = document.createElement("h2");
+        titleEl.textContent = movie.title;
+        const directorEl = document.createElement("p");
+        directorEl.textContent = `Director: ${movie.director}`;
+        const yearEl = document.createElement("p");
+        yearEl.textContent = `Year: ${movie.year}`;
+        yearEl.classList.add("year");
+        const genreEl = document.createElement("p");
+        genreEl.textContent = `Genre: ${movie.genre}`;
+
+        movieEl.appendChild(titleEl);
+        movieEl.appendChild(directorEl);
+        movieEl.appendChild(yearEl);
+        movieEl.appendChild(genreEl);
+        return movieEl;
+      }
+
+      for (let i = 0; i < movies.length; i++) {
+        const movieEl = makeMovieElement(movies[i]);
+        container.appendChild(movieEl);
+      }
+    </script>
+  </body>
+</html>

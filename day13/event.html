@@ -1,0 +1,52 @@
+<html lang="ko">
+  <head>
+    <title>Event</title>
+  </head>
+  <body>
+    <!-- 인라인 이벤트 -->
+    <input
+      id="text-input"
+      type="text"
+      onfocus="focusEvent()"
+      onblur="blurEvent()"
+    />
+    <button onclick="clickEvent()">클릭</button>
+
+    <!-- 프로퍼티 이벤트 -->
+    <button id="property-button">프로퍼티 이벤트</button>
+
+    <!-- addEventListener 이벤트 -->
+    <button id="listener-button">addEventListener 이벤트</button>
+
+    <div id="container"></div>
+    <script>
+      function clickEvent() {
+        const input = document.getElementById("text-input");
+        const container = document.getElementById("container");
+        const text = input.value;
+        const p = document.createElement("p");
+        p.textContent = text;
+        container.appendChild(p);
+      }
+      function focusEvent() {
+        console.log("포커스 이벤트 발생");
+      }
+      function blurEvent() {
+        console.log("블러 이벤트 발생");
+      }
+
+      // 프로퍼티 이벤트
+      const propertyButton = document.getElementById("property-button");
+      propertyButton.onclick = function () {
+        alert("프로퍼티 이벤트 발생");
+      };
+      //   propertyButton.onclick = clickEvent;
+
+      // addEventListener 이벤트
+      const listenerButton = document.getElementById("listener-button");
+      listenerButton.addEventListener("click", function () {
+        alert("addEventListener 이벤트 발생");
+      });
+    </script>
+  </body>
+</html>
