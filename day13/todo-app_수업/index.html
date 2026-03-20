@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>할 일 목록 앱</title>
+    <style>
+      .container {
+        max-width: 600px;
+        margin: 20px auto;
+        font-family: Arial, sans-serif;
+      }
+      .task-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+        cursor: pointer;
+      }
+      .completed {
+        text-decoration: line-through;
+        color: #888;
+      }
+      .delete-button {
+        background-color: #ff4444;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+      .delete-button:hover {
+        background-color: #cc0000;
+      }
+      .high {
+        color: red;
+      }
+      input,
+      button {
+        padding: 8px;
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>할 일 목록</h1>
+      <div>
+        <input type="text" id="taskInput" placeholder="할 일을 입력하세요" />
+        <select id="priority">
+          <option value="low">낮음</option>
+          <option value="high">높음</option>
+        </select>
+        <button id="addButton" onclick="addTask()">추가</button>
+        <button id="clearButton">전체 삭제</button>
+      </div>
+      <div id="taskCount">현재 할 일: <span>0</span>개</div>
+      <ul id="taskList"></ul>
+    </div>
+    <script src="dom_assignment.js"></script>
+  </body>
+</html>
