@@ -1,0 +1,45 @@
+
+<!-- index.html (포스트 목록 화면) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post List</title>
+    <style>
+        /* 페이지 전체(body)의 디자인 설정 */
+        body {
+            font-family: Arial, sans-serif;   /* 글꼴 지정 */
+            margin: 20px;                     /* 바깥 여백 20px */
+            max-width: 800px;                 /* 최대 너비를 800px로 제한 */
+        }
+        /* 가장 큰 제목(h1)의 디자인 설정 */
+        h1 {
+            color: #333;                    /* 글자 색상을 짙은 회색으로 설정 */
+        }
+        /* 목록(ul) 전체의 디자인 설정 */
+        ul {
+            list-style: none;                  /* 기본 목록 스타일 제거 (점 제거) */                 
+            padding: 0;                        /* 안쪽 여백 제거 */
+            cursor: pointer;                   /* 마우스 커서를 포인터로 변경 (클릭 가능하다는 시각적 표시) */
+        }
+        /* 목록의 각 항목(li) 디자인 설정 */
+        li {
+            padding: 10px;                     /* 안쪽 여백 10px */
+            margin: 5px 0;                     /* 위아래로 5px의 바깥 여백 */
+            background: #f9f9f9;             /* 배경색을 밝은 회색으로 설정 */
+            border-radius: 5px;                /* 모서리를 둥글게(5px) */
+        }
+        /* 마우스가 각 항목(li) 위에 올라갔을 때(hover) 디자인 */
+        li:hover {
+            background: #e0e0e0;             /* 배경색을 더 밝은 회색으로 변경하여 시각적 피드백 제공 */
+            text-decoration: underline;        /* 글자에 밑줄 추가하여 클릭 가능하다는 시각적 표시 제공 */
+        }
+    </style>
+</head>
+<body>
+    <h1>Post List</h1>
+    <ul id="post-list"></ul>
+    <script src="list.js"></script>
+</body>
+</html>

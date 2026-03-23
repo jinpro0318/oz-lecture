@@ -1,0 +1,47 @@
+<!-- detail.html (포스트 상세 화면) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Detail</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            max-width: 800px;
+        }
+        h1, h3 {
+            color: #333;
+        }
+        /* 상세 정보가 들어갈 박스의 디자인 설정 */
+        #post-detail {
+            padding: 15px;             /* 안쪽 여백 15px */
+            background: #fff;        /* 배경을 흰색으로 설정 */
+            border: 1px solid #ddd;  /* 옅은 회색 테두리 추가 */
+            border-radius: 5px;        /* 테두리 모서리를 둥글게 */
+        }
+        /* 제목과 내용 사이의 간격을 줄이기 위해 h3의 상단 여백 제거 */
+        #post-detail h3 {
+            margin-top: 0;
+        }
+        /* 목록으로 돌아가는 뒤로가기 링크(a 태그) 디자인을 설정 */
+        a {
+            display: inline-block;     /* 여백 적용을 위해 블록 형태로 변경 */
+            margin-top: 20px;          /* 상단 여백 20px */
+            text-decoration: none;     /* 링크 밑줄 제거 */
+            color: #007bff;          /* 링크 색상을 파란색으로 설정 */
+        }
+        /* 링크에 마우스를 올렸을 때 밑줄이 나타나도록 설정 */
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Post Detail</h1>
+    <div id="post-detail"></div>
+    <a href="index.html">Back to List</a>
+    <script src="detail.js"></script>
+</body>
+</html>

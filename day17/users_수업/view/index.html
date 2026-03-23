@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day17 fetch</title>
+  </head>
+  <body>
+    <button onclick="history.back()">뒤로가기</button>
+    <div id="output"></div>
+    <script src="index.js"></script>
+  </body>
+</html>
