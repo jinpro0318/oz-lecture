@@ -1,5 +1,4 @@
-import { API_URL } from "../../util/consts/api-consts.js";
-import cacher from "../../util/cacher.js";
+const API_URL = "https://jsonplaceholder.typicode.com";
 
 // 포스트 상세 정보 표시
 async function displayPostDetail() {
@@ -9,20 +8,21 @@ async function displayPostDetail() {
     const postId = urlParams.get("postId");
     if (!postId) throw new Error("No post ID provided");
 
-    const postCache = cacher.getItem(`post-${postId}`);
-    if (postCache) {
-      const post = JSON.parse(postCache);
-      renderPost(post);
-      console.log("Post loaded from localStorage");
+    const postFromSession = localStorage.getItem(`post_${postId}`);
+    if (postFromSession) {
+      console.log("render from localStorage");
+      renderPost(JSON.parse(postFromSession));
       return;
     }
 
     const response = await fetch(`${API_URL}/posts/${postId}`);
     if (!response.ok) throw new Error("API 통신 오류");
     const post = await response.json();
+    const postString = JSON.stringify(post);
+    localStorage.setItem(`post_${postId}`, postString);
+
     renderPost(post);
     console.log("Post fetched from API");
-    cacher.setItem(`post-${postId}`, JSON.stringify(post));
   } catch (error) {
     console.error("Error:", error.message);
     document.getElementById("post-detail").innerHTML =
@@ -38,6 +38,14 @@ function renderPost(post) {
         <p>${post.body}</p>
     `;
 }
+
+// const setItem = function (key, val) {
+//   localStorage.setItem(key, val);
+// };
+
+// const getItem = function (key) {
+//   return localStorage.getItem(key);
+// };
 
 // 페이지 로드 시 포스트 상세 정보 표시
 displayPostDetail();

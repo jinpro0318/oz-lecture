@@ -1,12 +1,13 @@
-import { API_URL } from "../util/consts/api-consts.js";
+const apiUrl = "https://jsonplaceholder.typicode.com";
 
 // 포스트 목록 표시
 async function displayPosts() {
   // 포스트 데이터 가져오기
   try {
-    const response = await fetch(`${API_URL}/posts`);
+    const response = await fetch(`${apiUrl}/posts`);
     if (!response.ok) throw new Error("Failed to fetch posts");
     const posts = await response.json();
+    console.log(posts);
 
     const postList = document.getElementById("post-list");
     postList.innerHTML = ""; // 기존 목록 초기화
