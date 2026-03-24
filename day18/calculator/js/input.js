@@ -1,25 +1,29 @@
-// 입력 처리 함수
 const VALID_NUMBERS = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const VALID_OPERATORS = ["+", "-", "*", "/"];
 
 const resetDisplay = () => {
-    // 기능 구현
+    const display = document.getElementById("display");
+    display.value = "0";
     return "";
 };
 
 const setDisplay = (text) => {
-    // 기능 구현
+    const display = document.getElementById("display");
+    display.value = text;
     return text;
 };
 
-const subDisplay = () => {
-    // 기능구현
-    return "";
+const subDisplay = (currentInput) => {
+    const updatedInput = currentInput.slice(0, -1);
+    setDisplay(updatedInput || "0");
+    return updatedInput;
 };
 
 const appendNumber = (number, currentInput) => {
     if (!VALID_NUMBERS.includes(number)) throw new Error("유효한 숫자를 입력하세요.");
-    return setDisplay(currentInput + number);
+    // 0이 처음에 중복되지 않도록 처리
+    const newInput = currentInput === "0" ? number : currentInput + number;
+    return setDisplay(newInput);
 };
 
 const setOperator = (op, currentInput) => {
